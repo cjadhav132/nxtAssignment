@@ -1,0 +1,39 @@
+.mainContainer {
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 192px;
+    border: 1px solid #D7DFE9;
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.logoImg {
+    height: 50px;
+    width: 50px;
+    border: 2px solid #D7DFE9;
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 16px;
+}
+
+.categoryStyle{
+    text-align: left;
+    color: #7E858E;
+}
+
+.firstRow {
+    display: flex;
+    flex-grow: 2;
+}
+
+.secondRow {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.thirdRow {
+    flex-grow: 1;
+    text-align: left;
+    color: #7E858E;
+}

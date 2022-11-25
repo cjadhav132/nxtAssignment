@@ -1,0 +1,14 @@
+.searchBar{
+    border: 1px solid #D7DFE9;
+    display: flex;
+    width: 60%;
+    margin: 32px 16px;
+}
+
+.searchInput {
+    border: none;
+}
+
+.searchInput:focus-visible {
+    outline: none;
+}
