@@ -5,7 +5,7 @@ const ResourseBox = ({ resourse }) => {
         <div className="col-4" style={{padding: "16px"}}>
             <div key={resourse.id} className="mainContainer">
                 <div className="firstRow">
-                    <img src={resourse.icon_url} className="logoImg" />
+                    <img src={resourse.icon_url} className="logoImg" alt="" />
                     <div>
                         <div>{resourse.title}</div>
                         <div className="categoryStyle">{resourse.category}</div>

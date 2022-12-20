@@ -38,7 +38,7 @@ const Home = () => {
                 {buttonVals.map(val => {
                     return (
                         <button
-                            className={`viewSelection ${selectedView == val ? 'viewSelectionSelected' : ''}`}
+                            className={`viewSelection ${selectedView === val ? 'viewSelectionSelected' : ''}`}
                             onClick={handleViewSelection}
                             value={val}
                             key={val}

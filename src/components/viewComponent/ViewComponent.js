@@ -7,12 +7,6 @@ const ViewComponent = ({ view, data }) => {
     const [resources, setResources] = useState([])
     const [searchValue, setSearchValue] = useState('')
 
-    useEffect(() => {
-        handleData()
-        setSearchValue('')
-    }, [view, data])
-
-
     const handleData = useCallback(() => {
         if (data) {
             if (view === "Resource") {
@@ -20,17 +14,22 @@ const ViewComponent = ({ view, data }) => {
             }
             else {
                 const temp = data.filter(d => {
-                    return d.tag == view.toLowerCase()
+                    return d.tag === view.toLowerCase()
                 })
                 setResources(temp)
             }
         }
     }, [view, data])
 
+    useEffect(() => {
+        handleData()
+        setSearchValue('')
+    }, [view, handleData])
+
     const handleSearch = useCallback((e) => {
         const ipValue = e.target.value
         const compareVal = ipValue.toLowerCase()
-        if (ipValue.length == 0) {
+        if (ipValue.length === 0) {
             handleData()
         }
         else {
@@ -40,7 +39,7 @@ const ViewComponent = ({ view, data }) => {
             setResources(temp)
         }
         setSearchValue(ipValue)
-    }, [resources, data])
+    }, [resources, handleData])
 
     return (
         <div style={{ margin: "0px 10%" }}>
