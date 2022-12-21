@@ -7,6 +7,22 @@
   pointer-events: none;
 }
 
+.nxtLogo {
+  position: absolute;
+  left: 20px;
+  height: 70px;
+}
+
+.profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: red;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

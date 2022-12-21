@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import './App.css';
-import Home from './components/Home/Home'
-import AddResourse from './components/AddResourse/AddResourse';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import nxtLogo from './nxtLogo.PNG'
+import Home from './components/Home/Home'
+import AddResourse from './components/AddResourse/AddResourse';
+import LogInPage from './components/LogInPage/LogInPage';
 
 
 function App() {
 
   const [view, setView] = useState('home')
+  const [loggedIn, setLogged] = useState(false)
 
   const goToHome = () => {
     setView('home')
@@ -30,12 +33,29 @@ function App() {
     goToHome()
   }
 
+  const handleLogin = () => {
+    if (!loggedIn) {
+      setView('login')
+    }
+    else {
+      setLogged(!loggedIn)
+    }
+  }
+
+  const doLogIn = () => {
+    setLogged(true)
+    goToHome()
+  }
+
   const mainContent = () => {
     switch (view) {
       case 'home':
         return <Home />
       case 'addItem':
         return <AddResourse goToHome={goToHome} accepted={accepted} rejected={rejected} />
+
+      case 'login':
+        return <LogInPage doLogIn={doLogIn} />
 
       default:
         return <Home />
@@ -46,7 +66,25 @@ function App() {
   return (
     <div className="App">
       <nav style={{ borderBottom: "1px solid grey", height: '72px', background: "#FFFFFF" }}>
-        <button className="addItemButton" onClick={handleAddItem} >ADD ITEM</button>
+        <img src={nxtLogo} alt="logo" className='nxtLogo' />
+        {view === 'home' ?
+          <button className="addItemButton" onClick={handleAddItem} >ADD ITEM</button> :
+          null
+        }
+        <div>
+          <button
+            type="button"
+            className="btn btn-danger profile"
+            data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"
+          >
+          </button>
+          <div className="dropdown-menu">
+            <div className="dropdown-item" style={{ cursor: 'pointer' }} onClick={handleLogin} >
+              {loggedIn ? 'log out' : 'Log In'}
+            </div>
+          </div>
+        </div>
       </nav>
       {mainContent()}
       <ToastContainer />

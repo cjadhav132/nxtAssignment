@@ -43,10 +43,7 @@ const AddResourse = ({ goToHome, accepted, rejected }) => {
         fetch(addItemUrl).then((res) => {
             if (res.status >= 400) {
                 rejected()
-                // throw Error
             }
-            // return res
-            console.log("accepted");
             accepted()
         })
     }
@@ -77,7 +74,7 @@ const AddResourse = ({ goToHome, accepted, rejected }) => {
                         <select className='itemInput' style={{ color: '#7E858E' }}>
                             {buttonVals.map((val) => {
                                 return (
-                                    <option value={val}>{val}</option>
+                                    <option value={val} key={val} >{val}</option>
                                 )
                             })}
                         </select>

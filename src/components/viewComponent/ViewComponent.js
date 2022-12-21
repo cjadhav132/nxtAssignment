@@ -50,7 +50,7 @@ const ViewComponent = ({ view, data }) => {
             <div className="row">
                 {resources.map(res => {
                     return (
-                        <ResourseBox resourse={res} />
+                        <ResourseBox resourse={res} key={res.id}/>
                     )
                 })}
             </div>
