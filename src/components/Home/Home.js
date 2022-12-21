@@ -21,7 +21,7 @@ const Home = () => {
             }
             return response.json()
         }).then(data => {
-            console.log(data)
+            // console.log(data)
             return data
         })
         setData(res)
