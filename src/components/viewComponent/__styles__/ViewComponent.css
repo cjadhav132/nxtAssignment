@@ -12,3 +12,8 @@
 .searchInput:focus-visible {
     outline: none;
 }
+
+.searchImg {
+    width: 20px;
+    margin: 0px 4px;
+}

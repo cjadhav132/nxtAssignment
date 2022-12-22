@@ -35,7 +35,7 @@ const AddResourse = ({ goToHome, accepted, rejected }) => {
     })
 
     const handleTag = ((e) => {
-        setCategory(e.target.value)
+        setTag(e.target.value)
     })
 
     const finalSubmit = async () => {
@@ -47,6 +47,8 @@ const AddResourse = ({ goToHome, accepted, rejected }) => {
             accepted()
         })
     }
+
+
 
     return (
         <div className="row rowStyle">
@@ -62,16 +64,16 @@ const AddResourse = ({ goToHome, accepted, rejected }) => {
                     </div>
                     <div className='itemSubtitleContainer'>
                         <span className='itemSubtitle'>LINK</span>
-                        <input value={link} onChange={handleLink} className='itemInput' />
+                        <input value={link} onChange={handleLink} className='itemInput urls' />
                     </div>
                     <div className='itemSubtitleContainer'>
                         <span className='itemSubtitle'>ICON URL</span>
-                        <input className='itemInput' value={url} onChange={handleUrl} />
+                        <input className='itemInput urls' value={url} onChange={handleUrl} />
                     </div>
                     <div className='itemSubtitleContainer'>
                         <span className='itemSubtitle'>TAG NAME</span>
                         <br />
-                        <select className='itemInput' style={{ color: '#7E858E' }}>
+                        <select className='itemInput' style={{ color: '#7E858E' }} value={tagName} onChange={handleTag} >
                             {buttonVals.map((val) => {
                                 return (
                                     <option value={val} key={val} >{val}</option>
@@ -85,7 +87,7 @@ const AddResourse = ({ goToHome, accepted, rejected }) => {
                     </div>
                     <div className='itemSubtitleContainer'>
                         <span className='itemSubtitle'>DESCRIPTION</span>
-                        <input className='itemInput' value={description} onChange={handleDescription} />
+                        <textarea className='txtA itemInput' value={description} onChange={handleDescription} />
                     </div>
                     <div>
                         <button className='btn btn-primary' disabled={btnDis} onClick={finalSubmit} >CREATE</button>

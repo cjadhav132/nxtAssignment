@@ -5,6 +5,14 @@
     /* max-width: 1080px; */
 }
 
+.urls {
+    color: #0B69FF;
+}
+
+.txtA {
+    height: 80px !important;
+    resize: none;
+}
 .colStyle {
     padding: 0px;
     margin: 0px;
@@ -26,6 +34,8 @@
 .backDiv{
     width: fit-content;
     margin-left: 12px;
+    cursor: pointer;
+    color: #7E858E;
 }
 
 .itemTitle{

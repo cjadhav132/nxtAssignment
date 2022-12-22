@@ -1,0 +1,16 @@
+.inputStyle {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 24px;
+}
+
+.mainContainer {
+    width: 320px;
+    margin: auto;
+    height: auto;
+}
+
+.midContainer {
+    width: 200px;
+    margin: auto;    
+}

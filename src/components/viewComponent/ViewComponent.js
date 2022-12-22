@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react"
 import ResourseBox from "../ResourseBox/ResourceBox"
 import './__styles__/ViewComponent.css'
+import search from '../../imgs/search.png'
 
 const ViewComponent = ({ view, data }) => {
 
@@ -44,13 +45,15 @@ const ViewComponent = ({ view, data }) => {
     return (
         <div style={{ margin: "0px 10%" }}>
             <div className="searchBar">
-                <div style={{ width: "20px" }}>h</div>
+                <div>
+                    <img className="searchImg" src={search} alt="" />
+                </div>
                 <input value={searchValue} onChange={handleSearch} className="searchInput" placeholder="Search" />
             </div>
             <div className="row">
                 {resources.map(res => {
                     return (
-                        <ResourseBox resourse={res} key={res.id}/>
+                        <ResourseBox resourse={res} key={res.id} />
                     )
                 })}
             </div>

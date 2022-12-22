@@ -2,7 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import nxtLogo from './nxtLogo.PNG'
+import nxtLogo from './imgs/nxtLogo.PNG'
+import logInLogo from './imgs/logInbasic.png'
+import loggedInLogo from './imgs/loggedIn.png'
 import Home from './components/Home/Home'
 import AddResourse from './components/AddResourse/AddResourse';
 import LogInPage from './components/LogInPage/LogInPage';
@@ -55,7 +57,7 @@ function App() {
         return <AddResourse goToHome={goToHome} accepted={accepted} rejected={rejected} />
 
       case 'login':
-        return <LogInPage doLogIn={doLogIn} />
+        return <LogInPage doLogIn={doLogIn} goToHome={goToHome} />
 
       default:
         return <Home />
@@ -72,13 +74,13 @@ function App() {
           null
         }
         <div>
-          <button
-            type="button"
-            className="btn btn-danger profile"
-            data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false"
-          >
-          </button>
+            <img
+              src={loggedIn ? loggedInLogo : logInLogo}
+              className="profile"
+              data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"
+              alt=""
+            />
           <div className="dropdown-menu">
             <div className="dropdown-item" style={{ cursor: 'pointer' }} onClick={handleLogin} >
               {loggedIn ? 'log out' : 'Log In'}
