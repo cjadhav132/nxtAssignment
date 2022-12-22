@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/nxtAssignment/static/css/main.1a172dec.css",
-    "main.js": "/nxtAssignment/static/js/main.4b8ca488.js",
+    "main.css": "/nxtAssignment/static/css/main.bd20d88d.css",
+    "main.js": "/nxtAssignment/static/js/main.b36e5ff5.js",
     "static/js/787.8b13b7d5.chunk.js": "/nxtAssignment/static/js/787.8b13b7d5.chunk.js",
     "static/media/right.png": "/nxtAssignment/static/media/right.084db31ed93e09170588.png",
     "static/media/nxtLogo.PNG": "/nxtAssignment/static/media/nxtLogo.fb91a3053e8928d3c36a.PNG",
     "index.html": "/nxtAssignment/index.html",
-    "main.1a172dec.css.map": "/nxtAssignment/static/css/main.1a172dec.css.map",
-    "main.4b8ca488.js.map": "/nxtAssignment/static/js/main.4b8ca488.js.map",
+    "main.bd20d88d.css.map": "/nxtAssignment/static/css/main.bd20d88d.css.map",
+    "main.b36e5ff5.js.map": "/nxtAssignment/static/js/main.b36e5ff5.js.map",
     "787.8b13b7d5.chunk.js.map": "/nxtAssignment/static/js/787.8b13b7d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a172dec.css",
-    "static/js/main.4b8ca488.js"
+    "static/css/main.bd20d88d.css",
+    "static/js/main.b36e5ff5.js"
   ]
 }
