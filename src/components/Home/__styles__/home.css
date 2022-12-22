@@ -26,8 +26,13 @@
     text-align: center
 }
 
+.homeDiv {
+    height: calc(100vh - 72px);
+    background: #F5F5F5;
+}
+
 .viewSelectionContainer {
-    margin-top: 46px;
+    padding-top: 46px;
 }
 
 .viewSelection {

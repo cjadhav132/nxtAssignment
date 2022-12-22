@@ -21,7 +21,7 @@ const Home = () => {
             }
             return response.json()
         }).then(data => {
-            // console.log(data)
+            console.log(data)
             return data
         })
         setData(res)
@@ -32,21 +32,22 @@ const Home = () => {
     }
 
     return (
-        <div>
-            
-            <div className="viewSelectionContainer">
-                {buttonVals.map(val => {
-                    return (
-                        <button
-                            className={`viewSelection ${selectedView === val ? 'viewSelectionSelected' : ''}`}
-                            onClick={handleViewSelection}
-                            value={val}
-                            key={val}
-                        >
-                            {`${val}s`}
-                        </button>
-                    )
-                })}
+        <div className='homeDiv'>
+            <div>
+                <div className="viewSelectionContainer">
+                    {buttonVals.map(val => {
+                        return (
+                            <button
+                                className={`viewSelection ${selectedView === val ? 'viewSelectionSelected' : ''}`}
+                                onClick={handleViewSelection}
+                                value={val}
+                                key={val}
+                            >
+                                {`${val}s`}
+                            </button>
+                        )
+                    })}
+                </div>
             </div>
             <ViewComponent view={selectedView} data={dataState} />
         </div>

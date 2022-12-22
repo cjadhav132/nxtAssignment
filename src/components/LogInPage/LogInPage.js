@@ -69,7 +69,7 @@ const LogInPage = ({ doLogIn, goToHome }) => {
 
     return (
         <div style={{ marginTop: '10%' }}>
-            <div className="mainContainer" >
+            <div className="LogmainContainer" >
                 <div className="midContainer">
                     <div style={{ color: 'red', height: '20px' }} >{errorMsg}</div>
                     <div>
