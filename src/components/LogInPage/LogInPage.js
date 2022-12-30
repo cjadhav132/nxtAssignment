@@ -12,7 +12,7 @@ const LogInPage = ({ doLogIn, goToHome }) => {
     const disableButton = !(mob.length === 10 && pass.length >= 8)
 
     const configs = {
-        mob: '0123456789',
+        mob: '9876543210',
         passcode: 'password'
     }
 

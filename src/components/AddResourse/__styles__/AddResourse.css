@@ -23,12 +23,13 @@
     display: flex;
     flex-direction: column;
     background: #FBFBFB;
+    overflow: scroll;
 }
 
 .contentMainContainer {
     flex-grow: 1;
     width: 320px;
-    margin: 10% auto;
+    margin: auto;
 }
 
 .backDiv{
@@ -36,13 +37,13 @@
     margin-left: 12px;
     cursor: pointer;
     color: #7E858E;
+    padding: 10px;
 }
 
 .itemTitle{
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 32px;
-    /* font-family: 'rubik'; */
 }
 
 .itemSubtitleContainer {

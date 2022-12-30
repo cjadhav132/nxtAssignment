@@ -29,10 +29,11 @@
 .homeDiv {
     height: calc(100vh - 72px);
     background: #F5F5F5;
+    overflow: scroll;
 }
 
 .viewSelectionContainer {
-    padding-top: 46px;
+    padding-top: 32px;
 }
 
 .viewSelection {
