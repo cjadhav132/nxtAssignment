@@ -2,13 +2,15 @@ import { useCallback, useEffect, useState } from "react"
 import ResourseBox from "../ResourseBox/ResourceBox"
 import './__styles__/ViewComponent.css'
 import search from '../../imgs/search.png'
+import { useSelector, connect } from "react-redux"
 
-const ViewComponent = ({ view, data }) => {
+const ViewComponent = ({ view }) => {
 
     const [resources, setResources] = useState([])
     const [searchValue, setSearchValue] = useState('')
     const [pgVals, setPgVals] = useState([])
     const [start, setStart] = useState(0)
+    const data = useSelector(state =>  state.businesses)
 
     const cardsToShow = 6
 
@@ -26,7 +28,7 @@ const ViewComponent = ({ view, data }) => {
     }
 
     const handlePagination = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setStart((e.target.value - 1) * cardsToShow)
 
     }
@@ -90,7 +92,12 @@ const ViewComponent = ({ view, data }) => {
                     <ul className="pagination">
                         {pgVals.map(val => {
                             return (
-                                <li className={`page-item page-link ${((start / cardsToShow) === val - 1) ? 'pgActive' : ''}`} value={val} onClick={handlePagination} >
+                                <li
+                                    className={`page-item page-link ${((start / cardsToShow) === val - 1) ? 'pgActive' : ''}`}
+                                    value={val}
+                                    onClick={handlePagination}
+                                    key={val}
+                                >
                                     {val}
                                 </li>
                             )
@@ -103,4 +110,11 @@ const ViewComponent = ({ view, data }) => {
     )
 }
 
-export default ViewComponent
+const mapStateToProps = state => {
+    return {
+        businesses: state.businesses
+    };
+  };
+  
+
+export default connect(mapStateToProps)(ViewComponent)

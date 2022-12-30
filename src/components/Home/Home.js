@@ -1,31 +1,18 @@
 import { useEffect, useState } from 'react'
 import './__styles__/home.css'
 import ViewComponent from '../viewComponent/ViewComponent'
+import { useDispatch } from "react-redux"
+import { getData } from '../../APIs/mainApis'
 
 const Home = () => {
 
     const buttonVals = ["Resource", "Request", "User"]
-    const [dataState, setData] = useState([])
     const [selectedView, setSelectedView] = useState("Resource")
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        getData()
-    }, [setData])
-
-    const getData = async () => {
-        const res = await fetch(
-            "https://media-content.ccbp.in/website/react-assignment/resources.json"
-        ).then(response => {
-            if (response.status >= 400) {
-                throw Error
-            }
-            return response.json()
-        }).then(data => {
-            console.log(data)
-            return data
-        })
-        setData(res)
-    }
+        dispatch(getData())
+    }, [dispatch])
 
     const handleViewSelection = (e) => {
         setSelectedView(e.target.value)
@@ -49,7 +36,7 @@ const Home = () => {
                     })}
                 </div>
             </div>
-            <ViewComponent view={selectedView} data={dataState} />
+            <ViewComponent view={selectedView} />
         </div>
     )
 }
