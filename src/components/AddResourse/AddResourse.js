@@ -45,6 +45,8 @@ const AddResourse = ({ goToHome, accepted, rejected }) => {
                 rejected()
             }
             accepted()
+        }).catch(() => {
+            rejected()
         })
     }
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,12 +8,19 @@ import loggedInLogo from './imgs/loggedIn.png'
 import Home from './components/Home/Home'
 import AddResourse from './components/AddResourse/AddResourse';
 import LogInPage from './components/LogInPage/LogInPage';
+import { useDispatch } from 'react-redux';
+import { getData } from './APIs/mainApis'
 
 
 function App() {
 
   const [view, setView] = useState('home')
   const [loggedIn, setLogged] = useState(false)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getData())
+}, [])
 
   const goToHome = () => {
     setView('home')

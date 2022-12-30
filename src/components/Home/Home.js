@@ -1,18 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './__styles__/home.css'
 import ViewComponent from '../viewComponent/ViewComponent'
-import { useDispatch } from "react-redux"
-import { getData } from '../../APIs/mainApis'
 
 const Home = () => {
 
     const buttonVals = ["Resource", "Request", "User"]
     const [selectedView, setSelectedView] = useState("Resource")
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(getData())
-    }, [dispatch])
 
     const handleViewSelection = (e) => {
         setSelectedView(e.target.value)
